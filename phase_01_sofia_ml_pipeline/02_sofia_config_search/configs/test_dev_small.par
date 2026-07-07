@@ -1,0 +1,108 @@
+# ============================================================
+# SoFiA-2 config pequeña para prueba SDC2
+# ============================================================
+
+# Pipeline
+pipeline.verbose           = true
+pipeline.pedantic          = false
+pipeline.threads           = 4
+
+# Input
+input.data                 = /home/willy/sdc2/data/sky_dev_v2.fits
+
+# Región pequeña: x_min, x_max, y_min, y_max, z_min, z_max
+# Esta región está pensada para probar sin cargar el cubo completo
+input.region               = 0, 72, 291, 391, 5219, 5319
+
+input.gain                 =
+input.noise                =
+input.weights              =
+input.mask                 =
+input.invert               = false
+
+# Flagging
+flag.auto                  = false
+flag.threshold             = 3.5
+flag.log                   = true
+
+# Continuum subtraction
+contsub.enable             = false
+contsub.order              = 1
+contsub.threshold          = 2.0
+contsub.shift              = 4
+contsub.padding            = 3
+
+# Noise scaling
+scaleNoise.enable          = true
+scaleNoise.mode            = spectral
+scaleNoise.statistic       = mad
+scaleNoise.fluxRange       = negative
+scaleNoise.windowXY        = 99
+scaleNoise.windowZ         = 5
+scaleNoise.gridXY          = 0
+scaleNoise.gridZ           = 0
+scaleNoise.interpolate     = true
+scaleNoise.scfind          = true
+
+# Smooth + Clip finder
+scfind.enable              = true
+scfind.kernelsXY           = 0, 3, 6
+scfind.kernelsZ            = 0, 3, 7
+scfind.threshold           = 4.0
+scfind.replacement         = 2.0
+scfind.statistic           = mad
+scfind.fluxRange           = negative
+
+# Threshold finder desactivado
+threshold.enable           = false
+threshold.threshold        = 5.0
+threshold.mode             = relative
+threshold.statistic        = mad
+threshold.fluxRange        = negative
+
+# Linker: agrupa voxels conectados
+linker.enable              = true
+linker.radiusXY            = 2
+linker.radiusZ             = 2
+linker.minSizeXY           = 3
+linker.minSizeZ            = 3
+linker.maxSizeXY           = 0
+linker.maxSizeZ            = 0
+linker.positivity          = false
+linker.keepNegative        = true
+
+# Reliability desactivado para prueba rápida
+reliability.enable         = false
+
+# Mask dilation
+dilation.enable            = false
+dilation.iterationsXY      = 1
+dilation.iterationsZ       = 1
+dilation.threshold         = 0.001
+
+# Parameterisation
+parameter.enable           = true
+parameter.wcs              = true
+parameter.physical         = false
+parameter.prefix           = SoFiA
+parameter.offset           = false
+
+# Output
+output.directory           = /home/willy/sdc2/results
+output.filename            = master_test_small
+
+output.writeCatASCII       = true
+output.writeCatXML         = true
+output.writeCatSQL         = false
+
+output.writeNoise          = false
+output.writeFiltered       = false
+output.writeMask           = false
+output.writeMask2d         = false
+output.writeRawMask        = false
+output.writeMoments        = false
+output.writeCubelets       = false
+
+output.marginCubeletsXY    = 5
+output.marginCubeletsZ     = 5
+output.overwrite           = true

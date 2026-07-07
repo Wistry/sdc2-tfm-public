@@ -1,0 +1,69 @@
+# Pipeline
+pipeline.verbose           = true
+pipeline.pedantic          = false
+pipeline.threads           = 8
+
+input.data                 = /home/willy/sdc2/data/sky_dev_v2.fits
+
+# Input: región grande pero no todo el cubo
+# Formato: x_min, x_max, y_min, y_max, z_min, z_max
+input.region               = 0, 643, 0, 643, 4800, 5800
+
+# Smooth + Clip finder: permisivo
+scfind.enable              = true
+scfind.kernelsXY           = 0, 3, 6
+scfind.kernelsZ            = 0, 3, 7, 15
+scfind.threshold           = 2.8
+scfind.replacement         = 2.0
+scfind.statistic           = mad
+scfind.fluxRange           = negative
+
+# Threshold finder desactivado
+threshold.enable           = false
+
+# Linker: agrupa bastante, pero sin pasarse
+linker.enable              = true
+linker.radiusXY            = 2
+linker.radiusZ             = 3
+linker.minSizeXY           = 2
+linker.minSizeZ            = 2
+linker.maxSizeXY           = 0
+linker.maxSizeZ            = 0
+linker.positivity          = false
+
+# Filtro de negativos
+filter.discardNegative     = true
+
+# Reliability OFF para que no descarte candidatos
+reliability.enable         = false
+
+# Dilation OFF
+dilation.enable            = false
+
+# Parametrización
+parameter.enable           = true
+parameter.wcs              = true
+parameter.physical         = false
+parameter.prefix           = SoFiA
+parameter.offset           = false
+
+# Output
+output.directory           = /home/willy/sdc2/results
+output.filename            = master_test_many_candidates
+
+output.writeCatASCII       = true
+output.writeCatXML         = false
+output.writeCatSQL         = false
+
+# Desactivar productos pesados
+output.writeNoise          = false
+output.writeFiltered       = false
+output.writeMask           = false
+output.writeMask2d         = false
+output.writeRawMask        = false
+output.writeMoments        = false
+output.writeCubelets       = false
+
+output.marginCubeletsXY    = 5
+output.marginCubeletsZ     = 5
+output.overwrite           = true

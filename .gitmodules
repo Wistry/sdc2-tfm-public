@@ -1,0 +1,9 @@
+[submodule "repos/SoFiA-2"]
+	path = repos/SoFiA-2
+	url = https://gitlab.com/SoFiA-Admin/SKA-SDC2-SoFiA
+[submodule "repos/ska-sdc-2"]
+	path = repos/ska-sdc-2
+	url = https://github.com/FraunhoferChalmersCentre/ska-sdc-2.git
+[submodule "repos/hi-friends_analysis"]
+	path = repos/hi-friends_analysis
+	url = https://github.com/HI-FRIENDS-SDC2/hi-friends

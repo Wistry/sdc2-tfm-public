@@ -1,0 +1,88 @@
+# Derived from configs/sofia/test_dev_medium.par
+
+pipeline.verbose           = true
+pipeline.pedantic          = false
+pipeline.threads           = 4
+
+input.data                 = /home/willy/sdc2/data/sky_dev_v2.fits
+# Full-cube run: input.region intentionally disabled; SoFiA will use the whole FITS cube.
+input.region               =
+input.gain                 =
+input.noise                =
+input.weights              =
+input.mask                 =
+input.invert               = false
+
+flag.auto                  = false
+flag.threshold             = 2.8
+flag.log                   = true
+
+contsub.enable             = false
+contsub.order              = 1
+contsub.threshold          = 2.0
+contsub.shift              = 4
+contsub.padding            = 3
+
+scaleNoise.enable          = true
+scaleNoise.mode            = spectral
+scaleNoise.statistic       = mad
+scaleNoise.fluxRange       = negative
+scaleNoise.windowXY        = 99
+scaleNoise.windowZ         = 5
+scaleNoise.gridXY          = 0
+scaleNoise.gridZ           = 0
+scaleNoise.interpolate     = true
+scaleNoise.scfind          = true
+
+scfind.enable              = true
+scfind.kernelsXY           = 0, 3, 6
+scfind.kernelsZ            = 0, 3, 7
+scfind.threshold           = 3.5
+scfind.replacement         = 2.0
+scfind.statistic           = mad
+scfind.fluxRange           = negative
+
+threshold.enable           = false
+threshold.threshold        = 5.0
+threshold.mode             = relative
+threshold.statistic        = mad
+threshold.fluxRange        = negative
+
+linker.enable              = true
+linker.radiusXY            = 2
+linker.radiusZ             = 2
+linker.minSizeXY           = 3
+linker.minSizeZ            = 3
+linker.maxSizeXY           = 0
+linker.maxSizeZ            = 0
+linker.positivity          = false
+filter.discardNegative     = false
+
+reliability.enable         = false
+
+dilation.enable            = false
+dilation.iterationsXY      = 1
+dilation.iterationsZ       = 1
+dilation.threshold         = 0.001
+
+parameter.enable           = true
+parameter.wcs              = true
+parameter.physical         = false
+parameter.prefix           = SoFiA
+parameter.offset           = false
+
+output.directory           = phase_01_sofia_ml_pipeline/03_candidate_dataset/outputs/baseline_current_full
+output.filename            = baseline_current_full
+output.writeCatASCII       = true
+output.writeCatXML         = false
+output.writeCatSQL         = false
+output.writeNoise          = false
+output.writeFiltered       = false
+output.writeMask           = false
+output.writeMask2d         = false
+output.writeRawMask        = false
+output.writeMoments        = false
+output.writeCubelets       = false
+output.marginCubeletsXY    = 5
+output.marginCubeletsZ     = 5
+output.overwrite           = true

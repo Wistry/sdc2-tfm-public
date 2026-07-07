@@ -1,0 +1,98 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Conda / virtual envs
+.conda/
+.venv/
+venv/
+env/
+.env
+
+# VSCode
+.vscode/
+
+# Agent / Codex local metadata
+.agents/
+.codex/
+**/.matplotlib/
+
+# Build artifacts
+build/
+dist/
+*.o
+*.so
+
+# Logs
+*.log
+
+# Data files
+data/*.fits
+data/*.fit
+
+
+# Results / outputs
+results/
+outputs/
+tmp/
+audits/
+archive/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Private notes
+notes/
+AGENTS.md
+
+# SoFiA verbose diagnostic outputs
+**/*_diagnostic.eps
+**/*_rel.eps
+**/*_skellam.eps
+**/*_logfile.log
+**/run_*.log
+
+# Phase 3 / SoFiA verbose diagnostics
+phase_03_external_validation_40gb/outputs/logs/*.log
+phase_03_external_validation_40gb/sofia_tile_runs/**/run_sofia.log
+phase_03_external_validation_40gb/sofia_tile_runs/**/*_logfile.log
+phase_03_external_validation_40gb/sofia_tile_runs/**/*_diagnostic.eps
+phase_03_external_validation_40gb/sofia_tile_runs/**/*_rel.eps
+phase_03_external_validation_40gb/sofia_tile_runs/**/*_skellam.eps
+phase_03_external_validation_40gb/sofia_runs/**/run_sofia.log
+phase_03_external_validation_40gb/sofia_runs/**/*_logfile.log
+phase_03_external_validation_40gb/archive/verbose_sofia_outputs/
+
+# Optional temporary/cache files
+**/__pycache__/
+**/*.pyc
+**/.ipynb_checkpoints/
+
+# Heavy astronomical data
+**/*.fits
+**/*.fit
+
+# Arrays, patches and matrices
+**/*.npy
+**/*.npz
+
+# Trained models
+**/*.pt
+**/*.pth
+**/*.joblib
+**/*.pkl
+**/*.pickle
+
+# Large intermediate files
+**/*.zip
+**/*.xml
+**/*.log
+**/*.eps
+
+# Phase 3 local generated runs and provenance
+phase_03_external_validation_40gb/sofia_tile_runs/*
+!phase_03_external_validation_40gb/sofia_tile_runs/README.md
+phase_03_external_validation_40gb/overlap_10gb_40gb_report.json

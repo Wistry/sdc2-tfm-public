@@ -1,0 +1,26 @@
+cube_path: data/sky_dev_v2.fits
+
+catalogs:
+  baseline_current_full:
+    candidate_catalog: phase_01_sofia_ml_pipeline/03_candidate_dataset/outputs/baseline_current_full/candidates_sofia_only.csv
+    output_features: phase_02_spectral_features/01_extract_spectral_features/outputs/features/baseline_current_full_spectral_features.csv
+    output_raw_joined: phase_02_spectral_features/02_build_extended_datasets/outputs/raw_joined/baseline_current_full_extended_raw_joined.csv
+    output_clean: phase_02_spectral_features/02_build_extended_datasets/outputs/clean/baseline_current_full_extended_clean.csv
+    output_dataset: phase_02_spectral_features/02_build_extended_datasets/outputs/clean/baseline_current_full_extended_clean.csv
+
+  sdc2_team_sofia_like_full:
+    candidate_catalog: phase_01_sofia_ml_pipeline/03_candidate_dataset/outputs/sdc2_team_sofia_like_full/candidates_sofia_only.csv
+    output_features: phase_02_spectral_features/01_extract_spectral_features/outputs/features/sdc2_team_sofia_like_full_spectral_features.csv
+    output_raw_joined: phase_02_spectral_features/02_build_extended_datasets/outputs/raw_joined/sdc2_team_sofia_like_full_extended_raw_joined.csv
+    output_clean: phase_02_spectral_features/02_build_extended_datasets/outputs/clean/sdc2_team_sofia_like_full_extended_clean.csv
+    output_dataset: phase_02_spectral_features/02_build_extended_datasets/outputs/clean/sdc2_team_sofia_like_full_extended_clean.csv
+
+window_xy: 8
+window_z: 20
+source_radius_px: 4
+background_inner_radius_px: 6
+background_outer_radius_px: 8
+
+label_column: clean_label
+exclude_ambiguous_from_training: true
+random_state: 42

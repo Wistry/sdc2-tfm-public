@@ -1,0 +1,45 @@
+data:
+  candidates_path: "../03_candidate_dataset/outputs/baseline_current_full/candidates_sofia_only.csv"
+  scoring_full_cube_path: "../03_candidate_dataset/outputs/scoring_full_cube.csv"
+  label_column: "clean_label"
+
+application_catalogs:
+  - name: baseline_current_full
+    path: "../03_candidate_dataset/outputs/baseline_current_full/candidates_sofia_only.csv"
+    type: csv
+    use_for_local_clean_label: true
+
+  - name: sdc2_team_sofia_like_full
+    path: "../03_candidate_dataset/outputs/sdc2_team_sofia_like_full/sdc2_team_sofia_like_full_cat.txt"
+    type: sofia_txt
+    use_for_local_clean_label: false
+
+models:
+  final_models_dir: "../05_model_optimization/outputs/final_models"
+
+  selected_models:
+    - RandomForest_full
+    - ExtraTrees_full
+    - XGBoost_full
+    - RandomForest_no_position
+    - GradientBoosting_no_position
+    - XGBoost_no_position
+
+  threshold_modes:
+    - f1
+    - f0_5
+    - f2
+    - balanced_accuracy
+    - conservative_fp
+
+  use_threshold_from_metadata: true
+  fallback_threshold: 0.5
+
+outputs:
+  predictions_dir: "outputs/predictions"
+  accepted_dir: "outputs/accepted"
+  scores_dir: "outputs/scores"
+  reports_dir: "outputs/reports"
+  selected_for_scoring_dir: "outputs/selected_for_scoring"
+  sdc2_postfilter_dir: "outputs/sdc2_postfilter"
+  logs_dir: "outputs/logs"

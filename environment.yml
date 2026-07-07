@@ -1,0 +1,35 @@
+name: sdc2-tfm
+channels:
+  - conda-forge
+  - pytorch
+dependencies:
+  - python=3.10
+  - pip
+
+  # Core scientific stack
+  - numpy
+  - pandas
+  - scipy
+  - astropy
+  - matplotlib
+  - seaborn
+  - pyyaml
+  - tqdm
+  - joblib
+
+  # Machine learning
+  - scikit-learn
+  - xgboost
+  - optuna
+
+  # CNN experiments
+  - pytorch
+  - torchvision
+
+  # Notebooks / inspection
+  - jupyterlab
+  - ipykernel
+
+  # Optional utilities
+  - pip:
+      - ska-sdc2-scoring-utils

@@ -1,0 +1,90 @@
+data:
+  selected_strategies_path: "../06_catalog_strategy_comparison/outputs/selected_for_scoring/selected_for_08.yaml"
+  baseline_raw_catalog: "../03_candidate_dataset/outputs/baseline_current_full/baseline_current_full_cat.txt"
+  sdc2_raw_catalog: "../03_candidate_dataset/outputs/sdc2_team_sofia_like_full/sdc2_team_sofia_like_full_cat.txt"
+  truth_file: "../../data/sky_dev_truthcat_v2.txt"
+
+strategies:
+  use_selected_from_06: true
+  include_optional: true
+  build_ensembles_with_sdc2_raw: false
+
+  selected_strategies_extra:
+    - strategy_name: ML_ExtraTrees_full_f0_5
+      source_type: accepted
+      accepted_file: "../06_catalog_strategy_comparison/outputs/accepted/accepted_ExtraTrees_full_f0_5.csv"
+      selection_role: permissive_f0_5
+      optional: false
+
+    - strategy_name: ML_RandomForest_full_f0_5
+      source_type: accepted
+      accepted_file: "../06_catalog_strategy_comparison/outputs/accepted/accepted_RandomForest_full_f0_5.csv"
+      selection_role: permissive_f0_5
+      optional: false
+
+    - strategy_name: SDC2_XGBoost_full_f1
+      source_type: accepted
+      accepted_file: "../06_catalog_strategy_comparison/outputs/sdc2_postfilter/accepted/accepted_SDC2_XGBoost_full_f1.csv"
+      selection_role: sdc2_postfilter_balanced
+      optional: false
+
+    - strategy_name: SDC2_XGBoost_full_conservative_fp
+      source_type: accepted
+      accepted_file: "../06_catalog_strategy_comparison/outputs/sdc2_postfilter/accepted/accepted_SDC2_XGBoost_full_conservative_fp.csv"
+      selection_role: legacy_conservative_fp
+      optional: false
+
+    - strategy_name: SDC2_XGBoost_full_f0_5
+      source_type: accepted
+      accepted_file: "../06_catalog_strategy_comparison/outputs/sdc2_postfilter/accepted/accepted_SDC2_XGBoost_full_f0_5.csv"
+      selection_role: primary_conservative_precision
+      optional: false
+
+    - strategy_name: SDC2_ExtraTrees_full_f0_5
+      source_type: accepted
+      accepted_file: "../06_catalog_strategy_comparison/outputs/sdc2_postfilter/accepted/accepted_SDC2_ExtraTrees_full_f0_5.csv"
+      selection_role: sdc2_postfilter_f0_5
+      optional: false
+
+    - strategy_name: SDC2_RandomForest_full_f0_5
+      source_type: accepted
+      accepted_file: "../06_catalog_strategy_comparison/outputs/sdc2_postfilter/accepted/accepted_SDC2_RandomForest_full_f0_5.csv"
+      selection_role: sdc2_postfilter_f0_5
+      optional: false
+
+    - strategy_name: SDC2_GradientBoosting_no_position_f0_5
+      source_type: accepted
+      accepted_file: "../06_catalog_strategy_comparison/outputs/sdc2_postfilter/accepted/accepted_SDC2_GradientBoosting_no_position_f0_5.csv"
+      selection_role: sdc2_postfilter_f0_5
+      optional: false
+
+    - strategy_name: SDC2_XGBoost_no_position_f0_5
+      source_type: accepted
+      accepted_file: "../06_catalog_strategy_comparison/outputs/sdc2_postfilter/accepted/accepted_SDC2_XGBoost_no_position_f0_5.csv"
+      selection_role: sdc2_postfilter_f0_5
+      optional: false
+
+    - strategy_name: SDC2_GradientBoosting_no_position_conservative_fp
+      source_type: accepted
+      accepted_file: "../06_catalog_strategy_comparison/outputs/sdc2_postfilter/accepted/accepted_SDC2_GradientBoosting_no_position_conservative_fp.csv"
+      selection_role: sdc2_postfilter_no_position
+      optional: false
+
+    - strategy_name: SDC2_ExtraTrees_full_balanced_accuracy
+      source_type: accepted
+      accepted_file: "../06_catalog_strategy_comparison/outputs/sdc2_postfilter/accepted/accepted_SDC2_ExtraTrees_full_balanced_accuracy.csv"
+      selection_role: sdc2_postfilter_balanced
+      optional: false
+
+    - strategy_name: SDC2_RandomForest_full_conservative_fp
+      source_type: accepted
+      accepted_file: "../06_catalog_strategy_comparison/outputs/sdc2_postfilter/accepted/accepted_SDC2_RandomForest_full_conservative_fp.csv"
+      selection_role: sdc2_postfilter_conservative
+      optional: false
+
+outputs:
+  catalog_versions_dir: "outputs/catalog_versions"
+  submissions_dir: "outputs/submissions"
+  official_scores_dir: "outputs/official_sdc2_scores"
+  report_figures_dir: "outputs/report_figures"
+  reports_dir: "outputs/reports"
