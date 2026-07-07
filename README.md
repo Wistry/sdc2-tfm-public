@@ -33,6 +33,16 @@ Cada fase dispone de documentación específica:
 - [Fase 2: features espectro-espaciales y CNN](phase_02_spectral_features/README.md)
 - [Fase 3: validación ampliada en 40 GB](phase_03_external_validation_40gb/README.md)
 
+## Naturaleza del repositorio
+
+Este repositorio debe entenderse como un cuaderno técnico de investigación asociado al TFM, no como una librería de software cerrada ni como un paquete instalable de propósito general.
+
+El objetivo principal es conservar la trazabilidad experimental del trabajo: configuraciones probadas, scripts usados en cada fase, variantes de entrenamiento, criterios de filtrado, procesos de scoring y documentación técnica suficiente para entender cómo se obtuvieron los resultados descritos en la memoria.
+
+Por este motivo, el repositorio puede contener scripts específicos de fase, variantes experimentales y cierta duplicación controlada. Esta organización responde a la necesidad de documentar la evolución del pipeline y no a la intención de presentar una arquitectura software optimizada para producción.
+
+La prioridad del repositorio es la reproducibilidad y la interpretación del proceso experimental, no la abstracción máxima del código.
+
 ## Fases del trabajo
 
 ### Fase 1: SoFiA y ML tabular
