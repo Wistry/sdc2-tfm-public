@@ -55,16 +55,16 @@ AGENTS.md
 **/*_logfile.log
 **/run_*.log
 
-# Phase 3 / SoFiA verbose diagnostics
-phase_03_external_validation_40gb/outputs/logs/*.log
-phase_03_external_validation_40gb/sofia_tile_runs/**/run_sofia.log
-phase_03_external_validation_40gb/sofia_tile_runs/**/*_logfile.log
-phase_03_external_validation_40gb/sofia_tile_runs/**/*_diagnostic.eps
-phase_03_external_validation_40gb/sofia_tile_runs/**/*_rel.eps
-phase_03_external_validation_40gb/sofia_tile_runs/**/*_skellam.eps
-phase_03_external_validation_40gb/sofia_runs/**/run_sofia.log
-phase_03_external_validation_40gb/sofia_runs/**/*_logfile.log
-phase_03_external_validation_40gb/archive/verbose_sofia_outputs/
+# 40 GB extended validation / SoFiA verbose diagnostics
+validation_40gb/outputs/logs/*.log
+validation_40gb/sofia_tile_runs/**/run_sofia.log
+validation_40gb/sofia_tile_runs/**/*_logfile.log
+validation_40gb/sofia_tile_runs/**/*_diagnostic.eps
+validation_40gb/sofia_tile_runs/**/*_rel.eps
+validation_40gb/sofia_tile_runs/**/*_skellam.eps
+validation_40gb/sofia_runs/**/run_sofia.log
+validation_40gb/sofia_runs/**/*_logfile.log
+validation_40gb/archive/verbose_sofia_outputs/
 
 # Optional temporary/cache files
 **/__pycache__/
@@ -92,7 +92,7 @@ phase_03_external_validation_40gb/archive/verbose_sofia_outputs/
 **/*.log
 **/*.eps
 
-# Phase 3 local generated runs and provenance
-phase_03_external_validation_40gb/sofia_tile_runs/*
-!phase_03_external_validation_40gb/sofia_tile_runs/README.md
-phase_03_external_validation_40gb/overlap_10gb_40gb_report.json
+# 40 GB extended validation local generated runs and provenance
+validation_40gb/sofia_tile_runs/*
+!validation_40gb/sofia_tile_runs/README.md
+validation_40gb/overlap_10gb_40gb_report.json

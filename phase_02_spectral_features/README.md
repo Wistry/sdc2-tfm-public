@@ -39,6 +39,6 @@ Los cubos FITS de SDC2, patches NumPy, modelos entrenados y otros artefactos vol
 
 Los scripts generan CSV, JSON, modelos y figuras dentro de `outputs/`. Esas carpetas se mantienen fuera del control de versiones. Los resultados existentes no deben regenerarse sin disponer de los mismos datos y entorno experimental.
 
-## Relación con Fase 3
+## Relación con la validación ampliada en 40 GB
 
-`phase_03_external_validation_40gb/` reutiliza modelos y configuraciones congelados de esta fase para la validación externa sobre 40 GB.
+`validation_40gb/` reutiliza modelos y configuraciones congelados de esta fase para la validación ampliada en 40 GB.

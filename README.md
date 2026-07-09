@@ -19,7 +19,7 @@ Las métricas calculadas sobre `clean_label` son métricas internas. Solo los re
 sdc2/
 ├── phase_01_sofia_ml_pipeline/          # SoFiA y post-filtro tabular en 10 GB
 ├── phase_02_spectral_features/          # Features espectro-espaciales y CNN
-├── phase_03_external_validation_40gb/   # Validación ampliada en 40 GB
+├── validation_40gb/                     # Validación ampliada en 40 GB
 ├── data/                                # Referencias a datos locales no versionados
 ├── repos/                               # Dependencias externas como submódulos
 ├── environment.yml                      # Entorno Conda de referencia
@@ -31,7 +31,7 @@ Cada fase dispone de documentación específica:
 
 - [Fase 1: SoFiA y ML tabular](phase_01_sofia_ml_pipeline/README.md)
 - [Fase 2: features espectro-espaciales y CNN](phase_02_spectral_features/README.md)
-- [Fase 3: validación ampliada en 40 GB](phase_03_external_validation_40gb/README.md)
+- [Validación ampliada en 40 GB](validation_40gb/README.md)
 
 ## Naturaleza del repositorio
 
@@ -63,7 +63,7 @@ Añade 30 variables locales calculadas desde el cubo FITS y desarrolla dos ramas
 
 Incluye controles de leakage, validación agrupada, aplicación sobre el catálogo conservador y scoring oficial.
 
-### Fase 3: validación ampliada en 40 GB
+### Validación ampliada en 40 GB
 
 Aplica artefactos congelados de las fases anteriores sobre una región de 40 GB, excluyendo el subcubo de 10 GB empleado durante el desarrollo.
 
@@ -147,7 +147,7 @@ La reproducción debe realizarse de forma incremental:
 
 1. `phase_01_sofia_ml_pipeline/`: detección, etiquetado, benchmark, optimización y scoring.
 2. `phase_02_spectral_features/`: extracción de features, datasets extendidos, modelos tabulares y CNN.
-3. `phase_03_external_validation_40gb/`: aplicación de artefactos congelados sobre la región ampliada.
+3. `validation_40gb/`: aplicación de artefactos congelados sobre la región ampliada.
 
 Antes de ejecutar una fase:
 

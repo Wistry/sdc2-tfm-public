@@ -20,4 +20,4 @@ Comparar las variantes CNN seleccionadas bajo un protocolo común de datos, part
 - Tabla final de comparación en CSV.
 - Modelos y catálogos filtrados cuando corresponda.
 
-La comparación no sustituye la evaluación externa de `phase_03_external_validation_40gb`.
+La comparación no sustituye la validación ampliada en 40 GB de `validation_40gb`.
